@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://homestaykemaman.com.my/sitemap.xml
