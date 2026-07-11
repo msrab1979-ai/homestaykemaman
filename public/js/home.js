@@ -45,7 +45,7 @@ async function loadInfo() {
         document.getElementById('footerNama')
       ];
       els.forEach(el => { if (el) el.textContent = d.nama; });
-      document.title = `${d.nama} — Kemaman`;
+      document.title = `Homestay Kemaman | ${d.nama} — Selesa, Murah & Lengkap`;
     }
 
     // Tagline

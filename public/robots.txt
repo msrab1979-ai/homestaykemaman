@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://homestaykemaman.com.my/sitemap.xml
+Disallow: /admin.html
+Sitemap: https://homestaykemaman-dbdcc.web.app/sitemap.xml
