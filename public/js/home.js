@@ -99,7 +99,7 @@ async function loadGaleri() {
 
     grid.innerHTML = images.map((img, i) => `
       <div class="g-item reveal" onclick="openBox(${i})">
-        <img src="${img.url}" alt="${img.caption || 'Gambar homestay'}" loading="lazy">
+        <img src="${img.url}" alt="${img.caption && !img.caption.startsWith('WhatsApp Image') ? img.caption : `Homestay Chukai Utama Kemaman — gambar ${i + 1}`}" loading="lazy">
       </div>
     `).join('');
 

@@ -42,8 +42,8 @@ window.switchTab = function(tab) {
 
 const DEFAULTS = {
   nama: 'Homestay Chukai Utama',
-  tagline: 'Tempat rehat yang selesa untuk keluarga anda',
-  alamat: 'Chukai, Kemaman, Terengganu',
+  tagline: 'Homestay di Kemaman yang selesa, bersih & lengkap untuk keluarga anda',
+  alamat: '15295 Taman Pandan, Jalan Cukai Utama 2, 24000 Chukai, Kemaman, Terengganu',
   noWa: '60199761693',
   noTel: '+60X-XXXXXXXX',
   kemudahan: ['❄️ Air Cond', '🍳 Dapur Lengkap', '🚗 Parking Luas', '📺 TV Astro NJOI', '🛏️ 3 Bilik Tidur', '🚿 2 Bilik Air', '💧 Penapis Air Cuckoo'],
