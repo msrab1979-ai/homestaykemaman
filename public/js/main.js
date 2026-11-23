@@ -76,45 +76,6 @@ window.openBox = openBox;
 window.closeBox = closeBox;
 window.moveBox = moveBox;
 
-// ===== GEAR ICON + PASSWORD MODAL =====
+// ===== GEAR ICON — log masuk Google di admin.html =====
 const gearBtn = document.getElementById('gearBtn');
-const adminModal = document.getElementById('adminModal');
-const modalClose = document.getElementById('modalClose');
-const passInput = document.getElementById('passInput');
-const passErr = document.getElementById('passErr');
-const passSubmit = document.getElementById('passSubmit');
-
-const PASS = 'msrab1979';
-
-if (gearBtn && adminModal) {
-  gearBtn.addEventListener('click', () => {
-    adminModal.classList.add('on');
-    setTimeout(() => passInput && passInput.focus(), 100);
-  });
-  modalClose.addEventListener('click', closeModal);
-  adminModal.addEventListener('click', e => { if (e.target === adminModal) closeModal(); });
-
-  passSubmit.addEventListener('click', checkPass);
-  passInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPass(); });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && adminModal.classList.contains('on')) closeModal();
-  });
-}
-
-function closeModal() {
-  adminModal.classList.remove('on');
-  passInput.value = '';
-  passErr.textContent = '';
-}
-
-function checkPass() {
-  if (passInput.value === PASS) {
-    sessionStorage.setItem('hs_admin', '1');
-    window.location.href = '/admin.html';
-  } else {
-    passErr.textContent = 'Kata laluan tidak betul';
-    passInput.value = '';
-    passInput.focus();
-  }
-}
+if (gearBtn) gearBtn.addEventListener('click', () => { window.location.href = '/admin.html'; });

@@ -2,11 +2,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc, collection, getDocs, addDoc, deleteDoc, orderBy, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-storage.js";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
 
-// ===== AUTH CHECK =====
-if (!sessionStorage.getItem('hs_admin')) {
-  window.location.href = '/';
-}
+// Mesti sama dengan e-mel dalam firestore.rules & storage.rules
+const ADMIN_EMAIL = 'msrab1979@gmail.com';
+document.body.style.visibility = 'hidden';
 
 const cfg = {
   apiKey: "AIzaSyDUjEQ0ApoOqkMzBQrUDwhj2fvALBY9VRI",
@@ -21,10 +21,36 @@ const cfg = {
 const app = initializeApp(cfg);
 const db = getFirestore(app);
 const storage = getStorage(app);
+const auth = getAuth(app);
+
+// ===== AUTH CHECK — rules yang sebenarnya menghalang tulis; ini cuma UI =====
+onAuthStateChanged(auth, async user => {
+  if (user && user.email === ADMIN_EMAIL) {
+    document.body.style.visibility = '';
+    return;
+  }
+  if (user) {
+    alert(`Akaun ${user.email} bukan admin.`);
+    await signOut(auth);
+    window.location.href = '/';
+    return;
+  }
+  // Popup perlu klik pengguna, kalau tidak browser sekat
+  document.body.innerHTML = '<button id="loginBtn" class="a-btn-save" style="margin:20vh auto;display:block">🔐 Log masuk dengan Google</button>';
+  document.body.style.visibility = '';
+  document.getElementById('loginBtn').addEventListener('click', async () => {
+    try {
+      await signInWithPopup(auth, new GoogleAuthProvider());
+      location.reload();
+    } catch (err) {
+      alert('Login gagal: ' + err.code);
+    }
+  });
+});
 
 // ===== LOGOUT =====
-document.getElementById('logoutBtn').addEventListener('click', () => {
-  sessionStorage.removeItem('hs_admin');
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+  await signOut(auth);
   window.location.href = '/';
 });
 
