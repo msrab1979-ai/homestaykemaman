@@ -21,12 +21,34 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 - Firebase project: `homestaykemaman-dbdcc`
 - GitHub: https://github.com/msrab1979-ai/homestaykemaman
 
-## Matlamat & status (hibernate 11 Jul 2026)
+## Admin & keselamatan
 
-- Matlamat SEO: rank #1 untuk carian "homestay kemaman".
-- Blocker utama: Google Business Profile belum verified — ini kerja luar kod.
-- Laman live dengan title/meta SEO penuh, sitemap.xml dan robots.txt terkini.
-- Tiada kerja kod tergantung; projek selamat ditinggalkan dan disambung bila-bila.
+- Admin (`/admin.html`) guna log masuk Google; hanya `msrab1979@gmail.com`.
+- `firestore.rules` & `storage.rules`: baca awam, tulis hanya e-mel admin.
+  E-mel ini juga dalam `public/js/admin.js` (`ADMIN_EMAIL`) — tukar kedua-dua.
+- Deploy rules: `firebase deploy --only hosting,firestore:rules,storage --project homestaykemaman-dbdcc`
+- Teks laman (tagline, alamat, kemudahan) ditimpa oleh Firestore `config/homestay`
+  semasa runtime — betulkan data di panel admin, bukan HTML sahaja.
+
+## Matlamat & status (25 Nov 2026)
+
+- Matlamat SEO: rank #1 untuk "homestay kemaman", "homestay chukai", "homestay chukai kemaman".
+- Rank 25 Nov 2026: "homestay kemaman" hlm 3 · "homestay chukai" hlm 2 ·
+  "homestay chukai kemaman" hlm 1 (#9) · "homestay chukai utama" #1. Belum ada dalam Maps.
+- Google Business Profile: nama ditukar ke "Homestay Chukai Utama", kategori
+  Home Stay (utama) / Guest house / Holiday Home. **Belum verified** — satu-satunya
+  kaedah ialah video oleh pemilik. Pemilik akan rakam & upload video.
+- Jangan buat ulasan palsu (pemilik pernah minta; ditolak — risiko profil digantung).
+
+## Seterusnya — selepas GBP verified
+
+1. Isi penerangan & kemudahan dalam GBP (medan tersembunyi sebelum verify).
+2. Tukar link Maps dalam `public/index.html` (`maps.app.goo.gl/pNFeJoK86tsGzBFq8`,
+   hanya koordinat) dan `hasMap` dalam schema kepada link profil sebenar.
+3. Tambah butang "Tinggalkan Ulasan" (link ulasan GBP) + reka kad QR A5 untuk dicetak.
+4. Menunggu dari pemilik: harga, kapasiti/katil, WiFi/mesin basuh, ulasan sebenar,
+   gambar tambahan → kembangkan kandungan laman.
+5. Pilihan: domain sendiri (homestaykemaman.com/.my), senarai Booking.com/Agoda.
 
 ## Projek berkaitan: appsKO-suratKebenaran
 
