@@ -66,11 +66,23 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
   bilik, meja makan 8, mesin basuh, seterika) diambil dari blog pemilik 2019 —
   pemilik perlu sahkan masih tepat, terutama aircond bilik ketiga & masa check-in.
 
+## Dibuat 25 Nov 2026 (petang)
+
+- GBP (pending verifikasi): nama → "Homestay Chukai Utama Kemaman"; social profile
+  Facebook ditambah; website memang sudah laman ini. Kategori Home Stay tiada
+  medan waktu operasi; penerangan/atribut tersembunyi sehingga verified.
+- GSC: indexing diminta (Google sudah papar snippet baharu). Sitemap dihantar semula;
+  status "Couldn't fetch" tetapi Live Test = "URL is available to Google" → tunggu.
+- IndexNow (Bing): fail kunci `public/d52bd865da5131ce9feb5c4aeb1f839d.txt`
+  (jangan padam). Ping semula selepas kemas kini:
+  `https://api.indexnow.org/indexnow?url=<URL>&key=d52bd865da5131ce9feb5c4aeb1f839d`
+- Google Ads (akaun 328-848-6488): Final URL iklan HCU-KMN ditukar tetapi Google minta
+  "Confirm it's you" — pengguna perlu sahkan sendiri. Iklan 0 impresi 30 hari.
+- Blog homestay BUKAN dalam akaun Blogger msrab1979; Facebook tidak log masuk di Chrome.
+
 ## Seterusnya
 
-1. Pemilik: rakam video verifikasi GBP. Sebelum hantar, pertimbang nama
-   "Homestay Chukai Utama Kemaman" (sama dengan laman/schema) dan tukar website
-   GBP ke laman ini.
+1. Pemilik: rakam video verifikasi GBP (nama & website sudah dikemas kini).
 2. Selepas verified: penerangan, waktu operasi, foto baharu, balas 60 ulasan,
    post mingguan; reka kad QR A5 guna link tulis ulasan di atas.
 3. Ulasan baharu secara berterusan (tanpa insentif/tapisan) — ulasan terkini lama.
