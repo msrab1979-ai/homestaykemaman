@@ -59,7 +59,9 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 - Jangan buat ulasan palsu (pemilik pernah minta; ditolak — risiko profil digantung).
   Ulasan 5★ oleh akaun msrab1979 sendiri (konflik kepentingan) DIPADAM 25 Nov 2026
   atas persetujuan pengguna. Jangan tulis ulasan dari akaun pemilik/keluarga.
-- Google Ads kempen "HCU-KMN" aktif tetapi URL iklan ke blog lama, bukan laman ini.
+- **Google Ads DIHENTIKAN** (25 Nov 2026, keputusan pengguna: banyak klik, 0 pelanggan).
+  Semua kempen akaun 328-848-6488 Paused/Removed. Fokus: Google organik + Maps + laman web.
+  Jangan cadang iklan berbayar melainkan pengguna minta.
 - Blog lama (post 2019) senaraikan "Bengkel Kereta (50 Meter)" di sebelah nombor
   telefon — kemungkinan punca orang call cari mekanik. Disyorkan buang baris itu.
 - Fakta kandungan laman (semi-D lot tepi, garaj 4 kereta, katil queen+single tiap
@@ -76,8 +78,7 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 - IndexNow (Bing): fail kunci `public/d52bd865da5131ce9feb5c4aeb1f839d.txt`
   (jangan padam). Ping semula selepas kemas kini:
   `https://api.indexnow.org/indexnow?url=<URL>&key=d52bd865da5131ce9feb5c4aeb1f839d`
-- Google Ads (akaun 328-848-6488): Final URL iklan HCU-KMN ditukar tetapi Google minta
-  "Confirm it's you" — pengguna perlu sahkan sendiri. Iklan 0 impresi 30 hari.
+- Google Ads: kempen HCU-KMN di-pause (suntingan URL dibatalkan — tidak perlu lagi).
 - Blog homestay BUKAN dalam akaun Blogger msrab1979; Facebook tidak log masuk di Chrome.
 
 ## Seterusnya
