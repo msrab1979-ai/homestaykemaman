@@ -27,28 +27,62 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 - `firestore.rules` & `storage.rules`: baca awam, tulis hanya e-mel admin.
   E-mel ini juga dalam `public/js/admin.js` (`ADMIN_EMAIL`) — tukar kedua-dua.
 - Deploy rules: `firebase deploy --only hosting,firestore:rules,storage --project homestaykemaman-dbdcc`
-- Teks laman (tagline, alamat, kemudahan) ditimpa oleh Firestore `config/homestay`
+- Teks laman (nama, tagline, alamat, kemudahan) ditimpa oleh Firestore `config/homestay`
   semasa runtime — betulkan data di panel admin, bukan HTML sahaja.
+- Galeri: 4 gambar sebenar ditulis terus dalam `index.html` (`public/images/`, atribut
+  `data-path` = storagePath Firestore). `home.js` hanya MENAMBAH gambar baharu dari
+  Firestore. Gambar yang dipadam di admin masih kekal dalam HTML — buang manual.
+
+## Listing Google (Maps / GBP)
+
+- Listing Maps: "homestay kemaman - chukai utama", 4.7★ 60 ulasan (Nov 2026).
+  Place ID `ChIJa9pSCe6GyDERv9x8kWgHR5o` · CID `11116862350886231231` ·
+  feature `0x31c886ee0952da6b:0x9a470768917cdcbf` (disahkan dengan decode base64).
+- GBP dalam akaun msrab1979 ialah listing yang SAMA (claimed, bukan pendua).
+  Nama "Homestay Chukai Utama" masih pending — akan tampil selepas verified.
+- Link: peta `https://maps.google.com/?cid=11116862350886231231` ·
+  tulis ulasan `https://search.google.com/local/writereview?placeid=ChIJa9pSCe6GyDERv9x8kWgHR5o`
+- Website dalam listing Maps masih blog lama `homestaychukaiutama.blogspot.com`.
+- Pin GBP (4.22356, 103.41770) vs koordinat laman (4.223241, 103.41758) beza ~40 m —
+  belum disahkan mana satu pintu rumah sebenar.
 
 ## Matlamat & status (25 Nov 2026)
 
-- Matlamat SEO: rank #1 untuk "homestay kemaman", "homestay chukai", "homestay chukai kemaman".
+- Matlamat SEO: rank #1 untuk "homestay kemaman" (Search & Maps), juga
+  "homestay chukai", "homestay chukai kemaman".
 - Rank 25 Nov 2026: "homestay kemaman" hlm 3 · "homestay chukai" hlm 2 ·
-  "homestay chukai kemaman" hlm 1 (#9) · "homestay chukai utama" #1. Belum ada dalam Maps.
-- Google Business Profile: nama ditukar ke "Homestay Chukai Utama", kategori
-  Home Stay (utama) / Guest house / Holiday Home. **Belum verified** — satu-satunya
-  kaedah ialah video oleh pemilik. Pemilik akan rakam & upload video.
+  "homestay chukai kemaman" hlm 1 (#9) · "homestay chukai utama" #1.
+  Maps "homestay kemaman" (dilihat dari Chukai): **#8** selepas 1 iklan.
+- Halaman 1 "homestay kemaman" dikuasai panel "Rumah Inap" Google (dari Booking.com,
+  Agoda, Trip.com) + direktori (dhomestay.com, webhomestay.com) — perlu tersenarai di sana.
+- GBP **belum verified** — satu-satunya kaedah ialah video oleh pemilik.
 - Jangan buat ulasan palsu (pemilik pernah minta; ditolak — risiko profil digantung).
+  Akaun msrab1979 sendiri ada ulasan 5★ pada listing ini (konflik kepentingan) —
+  disyorkan padam.
+- Google Ads kempen "HCU-KMN" aktif tetapi URL iklan ke blog lama, bukan laman ini.
+- Blog lama (post 2019) senaraikan "Bengkel Kereta (50 Meter)" di sebelah nombor
+  telefon — kemungkinan punca orang call cari mekanik. Disyorkan buang baris itu.
+- Fakta kandungan laman (semi-D lot tepi, garaj 4 kereta, katil queen+single tiap
+  bilik, meja makan 8, mesin basuh, seterika) diambil dari blog pemilik 2019 —
+  pemilik perlu sahkan masih tepat, terutama aircond bilik ketiga & masa check-in.
 
-## Seterusnya — selepas GBP verified
+## Seterusnya
 
-1. Isi penerangan & kemudahan dalam GBP (medan tersembunyi sebelum verify).
-2. Tukar link Maps dalam `public/index.html` (`maps.app.goo.gl/pNFeJoK86tsGzBFq8`,
-   hanya koordinat) dan `hasMap` dalam schema kepada link profil sebenar.
-3. Tambah butang "Tinggalkan Ulasan" (link ulasan GBP) + reka kad QR A5 untuk dicetak.
-4. Menunggu dari pemilik: harga, kapasiti/katil, WiFi/mesin basuh, ulasan sebenar,
-   gambar tambahan → kembangkan kandungan laman.
-5. Pilihan: domain sendiri (homestaykemaman.com/.my), senarai Booking.com/Agoda.
+1. Pemilik: rakam video verifikasi GBP. Sebelum hantar, pertimbang nama
+   "Homestay Chukai Utama Kemaman" (sama dengan laman/schema) dan tukar website
+   GBP ke laman ini.
+2. Selepas verified: penerangan, waktu operasi, foto baharu, balas 60 ulasan,
+   post mingguan; reka kad QR A5 guna link tulis ulasan di atas.
+3. Ulasan baharu secara berterusan (tanpa insentif/tapisan) — ulasan terkini lama.
+4. Senarai di Booking.com / Agoda / Airbnb (masuk panel "Rumah Inap"), dhomestay.com,
+   Bing Places, Apple Business; kemas kini Facebook & jauh.my ke laman ini.
+5. Menunggu dari pemilik: harga, kapasiti rasmi, WiFi, gambar tambahan.
+6. Pilihan: domain sendiri (homestaykemaman.com/.my).
+
+## Skill SEO
+
+- `.claude/skills/` — 8 skill dari AgriciDaniel/claude-seo (md sahaja, tanpa skrip),
+  diimbas dengan NVIDIA SkillSpector. Butiran: `.claude/skills/README-SOURCE.md`.
 
 ## Projek berkaitan: appsKO-suratKebenaran
 

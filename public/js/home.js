@@ -69,8 +69,8 @@ async function loadInfo() {
       if (grid) grid.innerHTML = d.kemudahan.map(k => `<li>${k}</li>`).join('');
     }
 
-    // Maps embed
-    if (d.mapsEmbed) {
+    // Maps embed (hanya URL embed — link biasa seperti maps.app.goo.gl tidak boleh dibuka dalam iframe)
+    if (d.mapsEmbed && /output=embed|\/maps\/embed/.test(d.mapsEmbed)) {
       const frame = document.getElementById('mapsFrame');
       if (frame) frame.src = d.mapsEmbed;
     }
@@ -81,27 +81,30 @@ async function loadInfo() {
 }
 
 // ===== LOAD GALERI =====
+// Gambar sedia ada ditulis terus dalam index.html (data-path = storagePath) supaya Google nampak
+// gambar sebenar. Firestore hanya MENAMBAH gambar baharu yang dimuat naik dari panel admin.
 async function loadGaleri() {
   try {
-    const q = query(collection(db, 'galeri'), orderBy('order', 'asc'));
-    const snap = await getDocs(q);
-
-    if (snap.empty) return; // kekal placeholder
-
-    const images = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-
-    // Update lightbox array
-    window.galeriImgs = images.map(img => img.url);
-
-    // Render grid
     const grid = document.getElementById('galeriGrid');
     if (!grid) return;
 
-    grid.innerHTML = images.map((img, i) => `
-      <div class="g-item reveal" onclick="openBox(${i})">
-        <img src="${img.url}" alt="${img.caption && !img.caption.startsWith('WhatsApp Image') ? img.caption : `Homestay Chukai Utama Kemaman — gambar ${i + 1}`}" loading="lazy">
+    const q = query(collection(db, 'galeri'), orderBy('order', 'asc'));
+    const snap = await getDocs(q);
+    if (snap.empty) return;
+
+    const sedia = new Set([...grid.querySelectorAll('[data-path]')].map(el => el.dataset.path));
+    const baru = snap.docs.map(d => d.data()).filter(img => !sedia.has(img.storagePath));
+    if (!baru.length) return;
+
+    const mula = grid.children.length;
+    grid.insertAdjacentHTML('beforeend', baru.map((img, i) => `
+      <div class="g-item reveal" data-path="${img.storagePath}" onclick="openBox(${mula + i})">
+        <img src="${img.url}" alt="${img.caption && !img.caption.startsWith('WhatsApp Image') ? img.caption : `Homestay Chukai Utama Kemaman — gambar ${mula + i + 1}`}" loading="lazy">
       </div>
-    `).join('');
+    `).join(''));
+
+    // Update lightbox array
+    window.galeriImgs = [...grid.querySelectorAll('img')].map(img => img.src);
 
     // Re-observe reveal elements
     const ro = new IntersectionObserver(entries => {
@@ -109,17 +112,12 @@ async function loadGaleri() {
         if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
       });
     }, { threshold: 0.1 });
-    grid.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+    grid.querySelectorAll('.reveal:not(.visible)').forEach(el => ro.observe(el));
 
   } catch (err) {
     console.warn('Firestore galeri error:', err.message);
-    // Set default placeholder images untuk lightbox
-    window.galeriImgs = [1,2,3,4,5,6].map(n => `https://picsum.photos/1200/900?random=${n}`);
   }
 }
-
-// Set default lightbox jika Firestore belum load
-window.galeriImgs = [1,2,3,4,5,6].map(n => `https://picsum.photos/1200/900?random=${n}`);
 
 // ===== TRACK WA clicks =====
 document.querySelectorAll('.wa-link').forEach(btn => {

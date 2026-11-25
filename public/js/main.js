@@ -44,7 +44,7 @@ const ro = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
 // ===== LIGHTBOX =====
-window.galeriImgs = [];
+window.galeriImgs = [...document.querySelectorAll('#galeriGrid img')].map(img => img.src);
 let cur = 0;
 const lbox = document.getElementById('lbox');
 const lboxImg = document.getElementById('lboxImg');
