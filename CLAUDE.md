@@ -35,11 +35,11 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 
 ## Listing Google (Maps / GBP)
 
-- Listing Maps: "homestay kemaman - chukai utama", 4.7★ 60 ulasan (Nov 2026).
+- Listing Maps: "homestay kemaman - chukai utama", 4.7★ 59 ulasan (Nov 2026; ulasan pemilik sendiri dipadam 25 Nov).
   Place ID `ChIJa9pSCe6GyDERv9x8kWgHR5o` · CID `11116862350886231231` ·
   feature `0x31c886ee0952da6b:0x9a470768917cdcbf` (disahkan dengan decode base64).
 - GBP dalam akaun msrab1979 ialah listing yang SAMA (claimed, bukan pendua).
-  Nama "Homestay Chukai Utama" masih pending — akan tampil selepas verified.
+  Nama pending (25 Nov): "Homestay Chukai Utama Kemaman" — akan tampil selepas verified.
 - Link: peta `https://maps.google.com/?cid=11116862350886231231` ·
   tulis ulasan `https://search.google.com/local/writereview?placeid=ChIJa9pSCe6GyDERv9x8kWgHR5o`
 - Website dalam listing Maps masih blog lama `homestaychukaiutama.blogspot.com`.
@@ -57,8 +57,8 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
   Agoda, Trip.com) + direktori (dhomestay.com, webhomestay.com) — perlu tersenarai di sana.
 - GBP **belum verified** — satu-satunya kaedah ialah video oleh pemilik.
 - Jangan buat ulasan palsu (pemilik pernah minta; ditolak — risiko profil digantung).
-  Akaun msrab1979 sendiri ada ulasan 5★ pada listing ini (konflik kepentingan) —
-  disyorkan padam.
+  Ulasan 5★ oleh akaun msrab1979 sendiri (konflik kepentingan) DIPADAM 25 Nov 2026
+  atas persetujuan pengguna. Jangan tulis ulasan dari akaun pemilik/keluarga.
 - Google Ads kempen "HCU-KMN" aktif tetapi URL iklan ke blog lama, bukan laman ini.
 - Blog lama (post 2019) senaraikan "Bengkel Kereta (50 Meter)" di sebelah nombor
   telefon — kemungkinan punca orang call cari mekanik. Disyorkan buang baris itu.
