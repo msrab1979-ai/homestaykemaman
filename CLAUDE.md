@@ -50,9 +50,15 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 
 - Matlamat SEO: rank #1 untuk "homestay kemaman" (Search & Maps), juga
   "homestay chukai", "homestay chukai kemaman".
-- Rank 25 Nov 2026: "homestay kemaman" hlm 3 · "homestay chukai" hlm 2 ·
+- Rank 25 Nov 2026 (asas): "homestay kemaman" hlm 3 · "homestay chukai" hlm 2 ·
   "homestay chukai kemaman" hlm 1 (#9) · "homestay chukai utama" #1.
   Maps "homestay kemaman" (dilihat dari Chukai): **#8** selepas 1 iklan.
+- Rank 26 Nov 2026 (sehari selepas deploy kandungan baharu; Chrome log masuk, &pws=0,
+  10 hasil/hlm): "homestay kemaman" hlm 4 (#1, ~ke-28) · "homestay chukai" hlm 3 (#9) ·
+  "homestay chukai kemaman" hlm 3 (#4) · "homestay chukai utama" hlm 1 (#3; FB #1, blog #2).
+  Maps "homestay kemaman": **#5** (listing bertanda "Pautan dilawati" — mungkin diperibadikan).
+  Organik turun berbanding asas — kemungkinan turun naik selepas indeks semula
+  (biasa 1–4 minggu) atau beza kaedah ukur; pantau mingguan sebelum ubah apa-apa.
 - Halaman 1 "homestay kemaman" dikuasai panel "Rumah Inap" Google (dari Booking.com,
   Agoda, Trip.com) + direktori (dhomestay.com, webhomestay.com) — perlu tersenarai di sana.
 - GBP **belum verified** — satu-satunya kaedah ialah video oleh pemilik.
@@ -90,7 +96,8 @@ firebase deploy --only hosting --project homestaykemaman-dbdcc
 4. Senarai di Booking.com / Agoda / Airbnb (masuk panel "Rumah Inap"), dhomestay.com,
    Bing Places, Apple Business; kemas kini Facebook & jauh.my ke laman ini.
 5. Menunggu dari pemilik: harga, kapasiti rasmi, WiFi, gambar tambahan.
-6. Pilihan: domain sendiri (homestaykemaman.com/.my).
+6. Pilihan: domain sendiri — homestaykemaman.com SUDAH milik pesaing (Homestay Fyna,
+   ranking hlm 2); pertimbang nama lain (.my / nama jenama).
 
 ## Skill SEO
 
